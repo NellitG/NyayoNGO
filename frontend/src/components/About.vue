@@ -11,7 +11,7 @@
     <div class="grid grid-cols-1 gap-16">
       <!-- Our Vision Section -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <!-- Image on the Left -->
+        
         <div class="relative">
           <div class="absolute inset-0 bg-yellow-400 w-5/6 h-5/6 -z-10 transform translate-x-4 translate-y-4 rounded-md"></div>
           <img
