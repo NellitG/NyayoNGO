@@ -17,7 +17,7 @@
       <div
         class="mt-4 bg-white border-2 border-yellow-200 p-6 rounded-lg shadow-md max-w-md mx-auto"
       >
-        <form @submit.prevent="submitDonation" class="space-y-6">
+        <form @submit.prevent="submitDonation" method="post" class="space-y-6">
           <!-- Name -->
           <div>
             <label for="name" class="block text-sm font-medium text-gray-700">
@@ -26,25 +26,27 @@
             <input
               type="text"
               id="name"
+              name="name"
               v-model="donationForm.name"
               @input="validateName"
               required
               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
               placeholder="Enter name"
             />
-            <p class="text-gray-500 text-xs mt-1">You cannot type numbers in the name field.</p>
+            <p class="text-gray-500 text-xs mt-1">
+              You cannot type numbers in the name field.
+            </p>
           </div>
 
           <!-- Amount -->
           <div>
-            <label
-              for="amount"
-              class="block text-sm font-medium text-gray-700"
-              >Amount</label
-            >
+            <label for="amount" class="block text-sm font-medium text-gray-700">
+              Amount
+            </label>
             <input
               type="number"
               id="amount"
+              name="amount"
               v-model="donationForm.amount"
               required
               min="1"
@@ -58,21 +60,22 @@
 
           <!-- Phone Number -->
           <div>
-            <label
-              for="phone"
-              class="block text-sm font-medium text-gray-700"
-              >Phone Number</label
-            >
+            <label for="phone" class="block text-sm font-medium text-gray-700">
+              Phone Number
+            </label>
             <input
               type="tel"
               id="phone"
+              name="phone"
               v-model="donationForm.phone"
               @input="validatePhone"
               required
               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
               placeholder="Enter phone number"
             />
-            <p class="text-gray-500 text-xs mt-1">You cannot type letters in the phone number field.</p>
+            <p class="text-gray-500 text-xs mt-1">
+              You cannot type letters in the phone number field.
+            </p>
             <p v-if="formErrors.phone" class="text-red-500 text-sm mt-1">
               {{ formErrors.phone }}
             </p>
