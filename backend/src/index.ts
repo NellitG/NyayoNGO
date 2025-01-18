@@ -1,16 +1,26 @@
 import express, { Request, Response, NextFunction } from 'express';
 import config from 'config';
+import methodOverride from 'method-override';
 
 import { logger } from './utils/logger.js';
 import { connectToDatabase } from './utils/db/connectToDb.js';
 import { ExpressError } from './utils/ExpressError.js';
+import { feedbackRouter } from './routes/feedback.routes.js';
+import { volunteerRouter } from './routes/volunteer.routes.js';
+import { subscriberRouter } from './routes/subscriber.routes.js';
 
 const app = express();
 const port = config.get<number>('server.port') || 3000;
 const dbUri = config.get<string>('database.dbUri');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
-
+// Routes
+app.use('/contact', feedbackRouter);
+app.use('/volunteer', volunteerRouter);
+app.use('/subscribe', subscriberRouter)
 
 
 // Error handling middleware
