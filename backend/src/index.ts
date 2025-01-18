@@ -1,6 +1,9 @@
 import express, { Request, Response, NextFunction } from 'express';
 import config from 'config';
 import methodOverride from 'method-override';
+import session from 'express-session';
+import MongoStore from 'connect-mongo';
+import passport from 'passport';
 
 import { logger } from './utils/logger.js';
 import { connectToDatabase } from './utils/db/connectToDb.js';
@@ -10,14 +13,50 @@ import { volunteerRouter } from './routes/volunteer.routes.js';
 import { subscriberRouter } from './routes/subscriber.routes.js';
 import { galleryRouter } from './routes/gallery.routes.js';
 import { eventRouter } from './routes/event.routes.js';
+import { localStrategy } from './utils/auth/localStrategy.js';
+import { adminRouter } from './routes/admin.routes.js';
 
 const app = express();
 const port = config.get<number>('server.port') || 3000;
 const dbUri = config.get<string>('database.dbUri');
+const secret = config.get<string>('session.secret');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+
+const store = MongoStore.create({
+  mongoUrl: dbUri,
+  dbName: 'Nyayo',
+  touchAfter: 24 * 60 * 60,
+  crypto: {
+      secret: secret
+  }
+});
+
+store.on('error', function(e) {
+  logger.error('Sessions Store Error', e)
+})
+
+const sessionConfig = {
+  store: store,
+  name: 'zrnmhzy',
+  secret: secret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    // secure: true,
+    maxAge: 1000 * 60 * 60 * 24 * 7
+  }
+}
+
+app.use(session(sessionConfig));
+
+// Passport - Should be AFTER session, and BEFORE the router
+app.use(passport.initialize()); // Initialize passport
+app.use(passport.session());
+passport.use(localStrategy);
 
 // Routes
 app.use('/contact', feedbackRouter);
@@ -25,6 +64,7 @@ app.use('/volunteer', volunteerRouter);
 app.use('/subscribe', subscriberRouter);
 app.use('/gallery', galleryRouter);
 app.use('/events', eventRouter);
+app.use('/supervisor-panel', adminRouter);
 
 
 // Error handling middleware

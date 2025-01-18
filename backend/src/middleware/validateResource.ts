@@ -11,4 +11,4 @@ export const validate = (schema: AnyZodObject) => (req: Request, res: Response, 
     const error = new ExpressError(e.errors[0].message, 400, e.errors); // 400(bad request)
     next(error);
   }
-}
+};
