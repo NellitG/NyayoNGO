@@ -8,6 +8,8 @@ import { ExpressError } from './utils/ExpressError.js';
 import { feedbackRouter } from './routes/feedback.routes.js';
 import { volunteerRouter } from './routes/volunteer.routes.js';
 import { subscriberRouter } from './routes/subscriber.routes.js';
+import { galleryRouter } from './routes/gallery.routes.js';
+import { eventRouter } from './routes/event.routes.js';
 
 const app = express();
 const port = config.get<number>('server.port') || 3000;
@@ -20,7 +22,9 @@ app.use(methodOverride('_method'));
 // Routes
 app.use('/contact', feedbackRouter);
 app.use('/volunteer', volunteerRouter);
-app.use('/subscribe', subscriberRouter)
+app.use('/subscribe', subscriberRouter);
+app.use('/gallery', galleryRouter);
+app.use('/events', eventRouter);
 
 
 // Error handling middleware
