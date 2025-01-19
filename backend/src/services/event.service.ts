@@ -2,6 +2,7 @@ import * as mongodb from 'mongodb';
 
 import { collections } from '../utils/db/connectToDb.js';
 import { ExpressError } from '../utils/ExpressError.js';
+import { Event } from '../models/event.model.js';
 
 // Validate ID
 export function isValidId(id: string) {
@@ -22,5 +23,10 @@ export async function findEvent(query: {_id: mongodb.ObjectId}) {
 
 export async function deleteOneEvent(query: {_id: mongodb.ObjectId}) {
   const result = await collections.events?.deleteOne(query);
+  return result;
+};
+
+export async function createNewEvent(event: Event) {
+  const result = await collections.events?.insertOne(event);
   return result;
 }
