@@ -7,4 +7,4 @@ import { createFeedback } from '../controllers/feedback.controller.js';
 export const feedbackRouter = express.Router({mergeParams: true})
 
 // Route to handle creation a new feedback from user
-feedbackRouter.post('/', validate(feedbackZodSchema), wrapAsync(createFeedback))
+feedbackRouter.post('/', validate(feedbackZodSchema), wrapAsync(createFeedback));

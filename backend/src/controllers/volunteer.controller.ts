@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { addTimeStamps } from '../utils/db/addTimeStamps.js';
-import { registerNewVolunteer } from '../services/volunteer.service.js';
+import { fetchAllVolunteers, registerNewVolunteer } from '../services/volunteer.service.js';
 import { ExpressError } from '../utils/ExpressError.js';
 
 export const registerVolunteer = async (req: Request, res: Response) => {
@@ -16,3 +16,8 @@ export const registerVolunteer = async (req: Request, res: Response) => {
     throw new ExpressError('Could not register the volunteer', 500);
   }
 };
+
+export const showAllVolunteers = async (req: Request, res: Response) => {
+  const volunteers = await fetchAllVolunteers();
+  res.status(200).json(volunteers);
+}

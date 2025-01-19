@@ -50,4 +50,5 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
     res.status(500).json({message: 'Error occured. Admin not created'})
   }
 }
+// Delete the above block before pushing to production
 

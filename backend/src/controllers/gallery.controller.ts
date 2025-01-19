@@ -3,5 +3,5 @@ import { fetchGallery } from '../services/gallery.service.js';
 
 export const showGallery = async (req: Request, res: Response) => {
   const gallery = await fetchGallery();
-  res.json(gallery);
+  res.status(200).json(gallery);
 };

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { createNewFeedback } from '../services/feedback.service.js';
+import { createNewFeedback, fetchAllFeedback } from '../services/feedback.service.js';
 import { ExpressError } from '../utils/ExpressError.js';
 import { addTimeStamps } from '../utils/db/addTimeStamps.js';
 
@@ -16,3 +16,8 @@ export const createFeedback = async (req: Request, res: Response) => {
     throw new ExpressError('Could not create the feedback', 500);
   }
 };
+
+export const showAllFeedback = async (req: Request, res: Response) => {
+  const feedback = await fetchAllFeedback();
+  res.status(200).json(feedback);
+}

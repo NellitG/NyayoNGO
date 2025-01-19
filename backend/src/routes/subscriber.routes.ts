@@ -6,4 +6,4 @@ import { registerSubscriber } from '../controllers/subscriber.controller.js';
 
 export const subscriberRouter = express.Router({mergeParams: true});
 
-subscriberRouter.post('/', validate(subscriberZodSchema), wrapAsync(registerSubscriber))
+subscriberRouter.post('/', validate(subscriberZodSchema), wrapAsync(registerSubscriber));
