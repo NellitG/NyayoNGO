@@ -4,6 +4,7 @@ import methodOverride from 'method-override';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import passport from 'passport';
+import cors from 'cors';
 
 import { logger } from './utils/logger.js';
 import { connectToDatabase } from './utils/db/connectToDb.js';
@@ -15,12 +16,19 @@ import { galleryRouter } from './routes/gallery.routes.js';
 import { eventRouter } from './routes/event.routes.js';
 import { localStrategy } from './utils/auth/localStrategy.js';
 import { adminRouter } from './routes/admin.routes.js';
+import { donationRouter } from './routes/donation.routes.js';
 
 const app = express();
 const port = config.get<number>('server.port') || 3000;
 const dbUri = config.get<string>('database.dbUri');
 const secret = config.get<string>('session.secret');
 
+app.use(cors({
+  origin: 'http://localhost:5173', // Allow requests from your frontend's origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Define allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+  credentials: true, // If your frontend sends cookies or uses authentication
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -65,6 +73,7 @@ app.use('/subscribe', subscriberRouter);
 app.use('/gallery', galleryRouter);
 app.use('/events', eventRouter);
 app.use('/supervisor-panel', adminRouter);
+app.use('/donate', donationRouter);
 
 
 // Error handling middleware
