@@ -171,15 +171,15 @@ export default {
     async submitForm() {
       this.isLoading = true;
       try {
-        const baseURL = 'http://localhost:3000';
+        const baseURL = import.meta.env.VITE_BASE_URL;
         const payload = { feedback: this.formData.feedback };
-        console.log(payload);
+        // console.log(payload);
         const response = await axios.post(`${baseURL}/contact`, payload);
-        console.log('Feedback submitted successfully:', response.data);
+        // console.log('Feedback submitted successfully:', response.data);
         alert('Thank you for your feedback!');
         this.resetForm();
       } catch (error) {
-        console.error('Error submitting feedback:', error.response?.data || error.message);
+        // console.error('Error submitting feedback:', error.response?.data || error.message);
         alert('Submission failed. Please try again later.');
       } finally {
         this.isLoading = false;

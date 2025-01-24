@@ -140,15 +140,15 @@ export default {
     async submitForm() {
       this.isLoading = true;
       try {
-        const baseURL = 'http://localhost:3000';
+        const baseURL = import.meta.env.VITE_BASE_URL;
         const payload = {volunteer: this.formData.volunteer,}
-        console.log(payload)
+        // console.log(payload)
         const response = await axios.post(`${baseURL}/volunteer`, payload);
-        console.log('Form submitted successfully:', response.data);
+        // console.log('Form submitted successfully:', response.data);
         alert('Thank you for signing up as a volunteer!');
         this.resetForm();
       } catch (error) {
-        console.error('Error submitting form:', error.response?.data || error.message);
+        // console.error('Error submitting form:', error.response?.data || error.message);
         alert('Submission failed. Please try again later.');
       } finally {
         this.isLoading = false;

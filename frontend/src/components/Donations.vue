@@ -104,13 +104,13 @@ export default {
     async submitDonation() {
       this.isLoading = true;
       try {
-        const baseURL = "http://localhost:3000";
+        const baseURL = import.meta.env.VITE_BASE_URL;
         const payload = { donation: this.donation };
         const response = await axios.post(`${baseURL}/donate`, payload);
         alert("Thank you for your donation!");
         this.resetForm();
       } catch (error) {
-        console.error("Error making donation:", error.response?.data || error.message);
+        // console.error("Error making donation:", error.response?.data || error.message);
         alert("Submission failed. Please try again later.");
       } finally {
         this.isLoading = false;
