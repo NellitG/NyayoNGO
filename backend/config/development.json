@@ -1,0 +1,13 @@
+{
+  "database": {
+    "dbUri": "mongodb://localhost:27017/"
+  },
+  "session": {
+    "secret": "nA2zqbbtWy6uv9hMnNbQURsZoMnaxMbyajymqGRAbyBgV86bCDawKTW0YtjKjb"
+  },
+  "cloudinary": {
+    "cloud_name": "dvmtn1i7u",
+    "api_key": "477317292816557",
+    "api_secret": "Fg7vyrABNoFba6jGDMtn9w2dUOU"
+  }
+}

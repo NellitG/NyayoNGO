@@ -6,23 +6,23 @@
     <div class="grid grid-cols-2 gap-4 lg:w-1/2">
       <!-- Image 1 -->
       <img
-        src="https://img.freepik.com/free-photo/smiley-young-african-boy-standing-field_23-2148852722.jpg?uid=R141465363&ga=GA1.1.487577296.1727511220&semt=ais_hybrid"
+        src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736922076/children_sqvjyn.avif"
         alt="Kids in class"
         class="rounded-lg shadow-md"
       />
       <!-- Image 2 -->
       <img
-        src="https://img.freepik.com/free-photo/medium-shot-happy-kids-posing_23-2148761586.jpg?uid=R141465363&ga=GA1.1.487577296.1727511220&semt=ais_hybrid"
+        src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736922077/smiles_xv96xv.avif"
       />
       <!-- Image 3 -->
       <img
-        src="https://cdn.pixabay.com/photo/2017/04/20/10/12/children-of-uganda-2245270_640.jpg"
+        src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736922077/children-of-uganda-2245270_640_zbefpa.jpg"
         alt="Child writing"
         class="rounded-lg shadow-md"
       />
       <!-- Image 4 -->
       <img
-        src="https://cdn.pixabay.com/photo/2014/09/04/09/35/children-435413_640.jpg"
+        src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736922077/childrens_gs07fd.jpg"
       />
     </div>
 
@@ -36,21 +36,20 @@
       <p class="mt-6 text-gray-600 leading-relaxed">
         We engage stakeholders through a blend of traditional and digital
         platforms, including informative brochures, a dynamic website, active
-        social media presence, and impactful newsletters.
-        By sharing inspiring personal stories from beneficiaries, parents, and
-        educators, we foster trust, raise awareness, and highlight the
-        transformative impact of our work.      
-        Our commitment lies in forging enduring partnerships and ensuring
+        social media presence, and impactful newsletters. By sharing inspiring
+        personal stories from beneficiaries, parents, and educators, we foster
+        trust, raise awareness, and highlight the transformative impact of our
+        work. Our commitment lies in forging enduring partnerships and ensuring
         sustainable support through grants, generous donations, and creative
         fundraising initiatives.
       </p>
       <div class="mt-8 flex justify-center lg:justify-center gap-4">
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSc6-AqABjXjuTf53oNXagBysS-5p5DFiBfWUt8jdLznTI137g/viewform"
+        <router-link
+          to="/volunteer"
           class="bg-yellow-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-900 hover:text-black"
         >
           Volunteer
-        </a>
+        </router-link>
       </div>
     </div>
   </div>

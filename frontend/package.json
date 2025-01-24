@@ -16,7 +16,6 @@
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",
     "cloudinary": "^2.5.1",
-    "chart.js": "^4.4.7",
     "json-server": "^0.17.3",
     "pinia": "^2.1.7",
     "vue": "^3.3.4",

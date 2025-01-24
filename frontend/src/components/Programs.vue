@@ -43,9 +43,9 @@
           </p>
           <!-- Centered Button -->
           <div class="flex justify-center">
-            <button class="px-6 py-3 bg-yellow-400 text-white font-semibold rounded-md shadow-lg hover:bg-yellow-500 transition duration-300">
+            <!-- <button class="px-6 py-3 bg-yellow-400 text-white font-semibold rounded-md shadow-lg hover:bg-yellow-500 transition duration-300">
               Learn More
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
           </p>
           <!-- Centered Button -->
           <div class="flex justify-center">
-            <router-link to="/Programs">
+            <router-link to="/">
               <button
                 class="px-6 py-3 bg-indigo-500 text-white font-semibold rounded-md shadow-lg hover:bg-indigo-600 transition duration-300"
               >
