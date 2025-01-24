@@ -44,13 +44,20 @@
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2 text-yellow-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
                   <path
                     d="M4.228 2.634a8.007 8.007 0 0111.544 0l.866.866a8.007 8.007 0 010 11.544l-.866.866a8.007 8.007 0 01-11.544 0l-.866-.866a8.007 8.007 0 010-11.544l.866-.866z"
                   />
                 </svg>
+                </svg>
                 Address: 937 Ngong Road, Nairobi
               </p>
-            </div>
+            </div>       
           </div>
         </div>
         <!-- Right Section -->
@@ -77,9 +84,10 @@
                 />
               </div>
 
+
               <!-- Email -->
               <div>
-                <label
+                 <label
                   for="email"
                   class="block text-sm font-medium text-yellow-500"
                   style="font-family: 'Finger Paint', cursive"
@@ -95,6 +103,7 @@
                   placeholder="Your Email"
                 />
               </div>
+
 
               <!-- Phone -->
               <div>
@@ -116,6 +125,7 @@
                 />
               </div>
 
+
               <!-- Message -->
               <div>
                 <label
@@ -135,6 +145,7 @@
                   placeholder="Your Feedback/Comments"
                 ></textarea>
               </div>
+
 
               <!-- Submit Button -->
               <div>
