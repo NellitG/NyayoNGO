@@ -140,7 +140,7 @@ export default {
     async submitForm() {
       this.isLoading = true;
       try {
-        const baseURL = import.meta.env.VITE_BASE_URL;
+        const baseURL = 'http://localhost:3000';
         const payload = {volunteer: this.formData.volunteer,}
         // console.log(payload)
         const response = await axios.post(`${baseURL}/volunteer`, payload);

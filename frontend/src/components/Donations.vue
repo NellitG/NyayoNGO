@@ -104,7 +104,7 @@ export default {
     async submitDonation() {
       this.isLoading = true;
       try {
-        const baseURL = import.meta.env.VITE_BASE_URL;
+        const baseURL = 'http://localhost:3000';
         const payload = { donation: this.donation };
         const response = await axios.post(`${baseURL}/donate`, payload);
         alert("Thank you for your donation!");
