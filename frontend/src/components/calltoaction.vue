@@ -8,11 +8,7 @@
           class="flex flex-col items-center bg-white rounded-lg border-yellow-400 border-2 border-black-400 hover:shadow-xl space-y-4 md:max-w-auto p-4"
         >
           <div class="shadow-lg hover:shadow-xl p-3">
-            <img
-              class="shrink-0 h-12 w-12"
-              src="../assets/sacco9.svg"
-              alt="sacco1 image"
-            />
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/trust--v1.png" alt="trust--v1"/>
           </div>
           <h4 class="font-semibold">Becoming a Volunteer</h4>
           <p class="text-center">
@@ -25,11 +21,7 @@
           class="flex flex-col items-center bg-white rounded-lg border-yellow-400 border-2 border-black-400 hover:shadow-xl space-y-4 md:max-w-auto p-4"
         >
           <div class="shadow-lg hover:shadow-xl p-3">
-            <img
-              class="shrink-0 h-12 w-12"
-              src="../assets/sacco8.svg"
-              alt="sacco2 image"
-            />
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/donate.png" alt="donate"/>
           </div>
           <h4 class="font-semibold">Donate</h4>
           <p>
@@ -40,11 +32,7 @@
           class="flex flex-col items-center bg-white rounded-lg border-yellow-400 border-2 border-black-400 hover:shadow-xl space-y-4 md:max-w-auto p-4"
         >
           <div class="shadow-lg hover:shadow-xl p-3">
-            <img
-              class="shrink-0 h-12 w-12"
-              src="../assets/sacco7.svg"
-              alt="sacco3 image"
-            />
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/morale.png" alt="morale"/>
           </div>
           <h4 class="font-semibold">Advocacy</h4>
           <p>

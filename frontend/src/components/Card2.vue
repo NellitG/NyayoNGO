@@ -6,9 +6,9 @@
       <div class="lg:w-1/4">
         <div class="flex items-center justify-center mt-32">
           <img
-            src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736504747/foundation_uucpts.jpg" 
+            src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1738737599/very-cheerful-beautiful-young-girl-from-namibiaafrica_564806-658_uhksbc.jpg" 
             alt="Nyayo Logo"
-            class="w-32 h-32 object-contain"
+            class="w-72 h-96 object-cover"
           />
         </div>
       </div>

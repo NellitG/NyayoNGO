@@ -98,7 +98,7 @@
         class="w-full relative rounded-2xl overflow-hidden hover:border-blue-900 flex flex-col border-2"
       >
         <img
-          src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736504818/sporting_dg3dgf.jpg">
+          src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736504818/sporting_dg3dgf.jpg"
           alt="Welcome Aboard"
           class="w-full h-1/2 object-cover"
         />

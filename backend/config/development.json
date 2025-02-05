@@ -1,13 +1,13 @@
 {
   "database": {
-    "dbUri": "mongodb://localhost:27017/"
+    "dbUri": "mongodb+srv://NellitG:pZxWfMewpqZzGLZW@nellitg.k7mxa.mongodb.net/?retryWrites=true&w=majority&appName=NellitG"
   },
   "session": {
     "secret": "nA2zqbbtWy6uv9hMnNbQURsZoMnaxMbyajymqGRAbyBgV86bCDawKTW0YtjKjb"
   },
   "cloudinary": {
-    "cloud_name": "dvmtn1i7u",
-    "api_key": "477317292816557",
-    "api_secret": "Fg7vyrABNoFba6jGDMtn9w2dUOU"
+    "cloud_name": "dqe69vaz7",
+    "api_key": "411435765198297",
+    "api_secret": "jxM5e6zuY4iYJ4kA7AdqF484m48"
   }
 }

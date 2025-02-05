@@ -17,7 +17,7 @@
         <div class="lg:w-1/2">
           <div class="bg-white p-6 rounded-lg shadow-md">
             <img
-              src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736504820/volunteer1_ema9os.avif"
+              src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1738737483/medium-shot-kid-holding-smartphone_23-2148860434_ngz5ab.jpg"
               alt="Contact Us"
               class="w-full rounded-md mb-6"
             />
@@ -44,13 +44,20 @@
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2 text-yellow-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
                   <path
                     d="M4.228 2.634a8.007 8.007 0 0111.544 0l.866.866a8.007 8.007 0 010 11.544l-.866.866a8.007 8.007 0 01-11.544 0l-.866-.866a8.007 8.007 0 010-11.544l.866-.866z"
                   />
                 </svg>
+                </svg>
                 Address: 937 Ngong Road, Nairobi
               </p>
-            </div>
+            </div>       
           </div>
         </div>
         <!-- Right Section -->
@@ -77,9 +84,10 @@
                 />
               </div>
 
+
               <!-- Email -->
               <div>
-                <label
+                 <label
                   for="email"
                   class="block text-sm font-medium text-yellow-500"
                   style="font-family: 'Finger Paint', cursive"
@@ -95,6 +103,7 @@
                   placeholder="Your Email"
                 />
               </div>
+
 
               <!-- Phone -->
               <div>
@@ -116,6 +125,7 @@
                 />
               </div>
 
+
               <!-- Message -->
               <div>
                 <label
@@ -135,6 +145,7 @@
                   placeholder="Your Feedback/Comments"
                 ></textarea>
               </div>
+
 
               <!-- Submit Button -->
               <div>
@@ -171,15 +182,16 @@ export default {
     async submitForm() {
       this.isLoading = true;
       try {
-        const baseURL = 'http://localhost:3000';
+        const baseURL = import.meta.env.VITE_BASE_URL;
+        console.log(baseURL);
         const payload = { feedback: this.formData.feedback };
-        console.log(payload);
+        // console.log(payload);
         const response = await axios.post(`${baseURL}/contact`, payload);
-        console.log('Feedback submitted successfully:', response.data);
+        // console.log('Feedback submitted successfully:', response.data);
         alert('Thank you for your feedback!');
         this.resetForm();
       } catch (error) {
-        console.error('Error submitting feedback:', error.response?.data || error.message);
+        // console.error('Error submitting feedback:', error.response?.data || error.message);
         alert('Submission failed. Please try again later.');
       } finally {
         this.isLoading = false;
