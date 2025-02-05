@@ -17,7 +17,7 @@
         <div class="lg:w-1/2">
           <div class="bg-white p-6 rounded-lg shadow-md">
             <img
-              src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1736504820/volunteer1_ema9os.avif"
+              src="https://res.cloudinary.com/dqe69vaz7/image/upload/v1738737483/medium-shot-kid-holding-smartphone_23-2148860434_ngz5ab.jpg"
               alt="Contact Us"
               class="w-full rounded-md mb-6"
             />

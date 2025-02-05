@@ -42,10 +42,10 @@
             <h3
               class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10"
               style="font-family: 'Finger Paint', cursive">
-            2025: First Partnership
+             Partnership
             </h3>
             <p class="mt-4 text-base text-gray-600">
-              Established partnerships with five local schools to implement inclusive digital education programs for differently-abled children.
+              At Nyayo’s Foundation, we believe that collaboration on all fronts is the cornerstone of impactful change. In 2025, our goal is to forge strong partnerships that amplify our mission of empowering differently-abled children. Together, we can create opportunities, break barriers, and build a future where every child thrives.
             </p>
           </div>
   
@@ -58,10 +58,10 @@
             <h3
               class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10"
               style="font-family: 'Finger Paint', cursive">
-            2026: Expansion
+            Expansion
             </h3>
             <p class="mt-4 text-base text-gray-600">
-              Expanded our reach to underserved communities, impacting over 1,000 differently-abled children across Kenya.
+              By 2030, Nyayo's Foundation envisions expanding our impact not only across Kenya but also into other African countries, fostering inclusivity and empowerment for differently-abled children on a broader scale.Through strategic partnerships and community-driven initiatives, we aim to reach more lives, inspire hope, and create a ripple effect of positive change across the continent
             </p>
           </div>
   
@@ -74,10 +74,10 @@
             <h3
               class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10"
               style="font-family: 'Finger Paint', cursive">
-            2027: Advocacy for Policy Change
+            Shaping Tomorrow
             </h3>
             <p class="mt-4 text-base text-gray-600">
-              Led national advocacy efforts to promote policy changes that support inclusive education for children with disabilities.
+              Nyayo’s Foundation aspires to become a global leader in advocating for and supporting differently-abled children. We aim to establish centers of excellence for inclusive education and digital accessibility across Africa and beyond, empowering communities, shaping policies, and driving innovation to ensure no child is left behind.
             </p>
           </div>
         </div>
