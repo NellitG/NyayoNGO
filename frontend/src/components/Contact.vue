@@ -44,16 +44,9 @@
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2 text-yellow-500"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
                   <path
                     d="M4.228 2.634a8.007 8.007 0 0111.544 0l.866.866a8.007 8.007 0 010 11.544l-.866.866a8.007 8.007 0 01-11.544 0l-.866-.866a8.007 8.007 0 010-11.544l.866-.866z"
                   />
-                </svg>
                 </svg>
                 Address: 937 Ngong Road, Nairobi
               </p>
@@ -64,7 +57,6 @@
         <div class="lg:w-1/2 hover:border-yellow-400 border-2 border-black-400 p-4">
           <div class="bg-white p-6 rounded-lg shadow-md">
             <form @submit.prevent="submitForm" class="space-y-4">
-              <!-- Inputs -->
               <!-- Name -->
               <div>
                 <label
@@ -77,17 +69,16 @@
                 <input
                   type="text"
                   id="name"
-                  v-model="formData.feedback.name"
+                  v-model="formData.name"
                   required
                   class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                   placeholder="Your Name"
                 />
               </div>
 
-
               <!-- Email -->
               <div>
-                 <label
+                <label
                   for="email"
                   class="block text-sm font-medium text-yellow-500"
                   style="font-family: 'Finger Paint', cursive"
@@ -97,13 +88,12 @@
                 <input
                   type="email"
                   id="email"
-                  v-model="formData.feedback.email"
+                  v-model="formData.email"
                   required
                   class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                   placeholder="Your Email"
                 />
               </div>
-
 
               <!-- Phone -->
               <div>
@@ -117,14 +107,13 @@
                 <input
                   type="tel"
                   id="phone"
-                  v-model="formData.feedback.phoneNumber"
+                  v-model="formData.phone"
                   pattern="\d{10,15}"
                   required
                   class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                   placeholder="Your Phone"
                 />
               </div>
-
 
               <!-- Message -->
               <div>
@@ -137,7 +126,7 @@
                 </label>
                 <textarea
                   id="message"
-                  v-model="formData.feedback.message"
+                  v-model="formData.message"
                   rows="4"
                   maxlength="500"
                   required
@@ -145,7 +134,6 @@
                   placeholder="Your Feedback/Comments"
                 ></textarea>
               </div>
-
 
               <!-- Submit Button -->
               <div>
@@ -167,13 +155,16 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   data() {
     return {
       formData: {
-        feedback: { name: '', email: '', phoneNumber: '', message: '' },
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
       },
       isLoading: false, // For submit button loading state
     };
@@ -182,23 +173,30 @@ export default {
     async submitForm() {
       this.isLoading = true;
       try {
-        const baseURL = import.meta.env.VITE_BASE_URL;
-        console.log(baseURL);
-        const payload = { feedback: this.formData.feedback };
-        // console.log(payload);
-        const response = await axios.post(`${baseURL}/contact`, payload);
-        // console.log('Feedback submitted successfully:', response.data);
-        alert('Thank you for your feedback!');
-        this.resetForm();
+        const payload = {
+          access_key: "b673cec6-02d7-4ef4-baf2-a74b252c02f5", // Web3Forms Public Key
+          name: this.formData.name,
+          email: this.formData.email,
+          phone: this.formData.phone,
+          message: this.formData.message,
+        };
+
+        const response = await axios.post("https://api.web3forms.com/submit", payload);
+
+        if (response.data.success) {
+          alert("Thank you for your feedback!");
+          this.resetForm();
+        } else {
+          alert("Submission failed. Please try again later.");
+        }
       } catch (error) {
-        // console.error('Error submitting feedback:', error.response?.data || error.message);
-        alert('Submission failed. Please try again later.');
+        alert("An error occurred. Please check your connection and try again.");
       } finally {
         this.isLoading = false;
       }
     },
     resetForm() {
-      this.formData.feedback = { fullName: '', email: '', phoneNumber: '', message: '' };
+      this.formData = { name: "", email: "", phone: "", message: "" };
     },
   },
 };
